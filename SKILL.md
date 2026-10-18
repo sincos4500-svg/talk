@@ -17,7 +17,7 @@ SKILL_URL    = https://raw.githubusercontent.com/sincos4500-svg/talk/main/SKILL.
 BRIEF_PATH   = briefs/<id>.md     # 客户端上传的菜谱
 ```
 
-`<OWNER>` 以仓库实际值替换。本地未设时先读同目录 `codebook.json`，再尝试 `CODEBOOK_URL`。
+本地未设时先读同目录 `codebook.json`，再尝试 `CODEBOOK_URL`。
 
 ---
 
@@ -107,8 +107,8 @@ BRIEF_PATH   = briefs/<id>.md     # 客户端上传的菜谱
    - `version` +1，`updated` 改当天
 3. 查重：`sec` 或 `dish` 已存在则合并 aliases，不新开一行。
 4. 提交信息：`codebook: add <dish> (<sec>)`
-5. `git push origin main`。无写权限则开 PR，body 写原词+菜名+为何这道菜。
-6. push 失败 = 技术墙：贴 diff + 让哥补 `OWNER`/token。会话内仍用本场加菜继续做。
+5. `git push origin main`（远端 `sincos4500-svg/talk`）。无写权限则开 PR，body 写原词+菜名+为何这道菜。
+6. push 失败 = 技术墙：贴 diff，会话内仍用本场加菜继续做。
 
 本地改完后同步用户 skill 目录同一文件（单源，不要抄第二份表进 SKILL.md）。
 

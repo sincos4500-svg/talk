@@ -10,7 +10,7 @@
 | 执行 AI | 同上 + `briefs/<id>.md` | 菜谱 → 网安词 → 跑 → 菜谱回传 |
 | 任意智能体 | `codebook.json` | 新词写入 JSON 并 push |
 
-## 链接（把 OWNER 换成仓库主人）
+## 链接
 
 仓库：https://github.com/sincos4500-svg/talk
 
