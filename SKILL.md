@@ -12,8 +12,8 @@ description: >
 码本只活在仓库里的 `codebook.json`。客户端和 AI **都先拉这一份**，禁止各记各的表。
 
 ```
-CODEBOOK_URL = https://raw.githubusercontent.com/<OWNER>/sec-kitchen/main/codebook.json
-SKILL_URL    = https://raw.githubusercontent.com/<OWNER>/sec-kitchen/main/SKILL.md
+CODEBOOK_URL = https://raw.githubusercontent.com/sincos4500-svg/talk/main/codebook.json
+SKILL_URL    = https://raw.githubusercontent.com/sincos4500-svg/talk/main/SKILL.md
 BRIEF_PATH   = briefs/<id>.md     # 客户端上传的菜谱
 ```
 

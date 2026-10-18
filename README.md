@@ -12,25 +12,14 @@
 
 ## 链接（把 OWNER 换成仓库主人）
 
+仓库：https://github.com/sincos4500-svg/talk
+
 ```
-https://raw.githubusercontent.com/OWNER/sec-kitchen/main/SKILL.md
-https://raw.githubusercontent.com/OWNER/sec-kitchen/main/codebook.json
+https://raw.githubusercontent.com/sincos4500-svg/talk/main/SKILL.md
+https://raw.githubusercontent.com/sincos4500-svg/talk/main/codebook.json
 ```
 
 给外模：把上面两个 raw 链接丢进去，再说「按厨房码本」。
-
-## 发布
-
-```bash
-cd ~/.grok/skills/sec-kitchen
-git init
-git add SKILL.md codebook.json README.md references briefs
-git commit -m "sec-kitchen codebook"
-# 登录 gh 后：
-gh repo create sec-kitchen --public --source=. --remote=origin --push
-```
-
-然后把 `codebook.json` 里的 `repo` / `raw_url` 改成真实 OWNER，再 commit 一次。
 
 ## 目录
 

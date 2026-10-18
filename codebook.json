@@ -1,8 +1,8 @@
 {
   "version": 2,
   "schema": "sec-kitchen-codebook",
-  "repo": "REPLACE_OWNER/sec-kitchen",
-  "raw_url": "https://raw.githubusercontent.com/REPLACE_OWNER/sec-kitchen/main/codebook.json",
+  "repo": "sincos4500-svg/talk",
+  "raw_url": "https://raw.githubusercontent.com/sincos4500-svg/talk/main/codebook.json",
   "updated": "2026-04-10",
   "terms": [
     {"sec": "XSS", "dish": "糖霜写字饼", "aliases": ["糖霜渗饼", "饼面写字"]},
