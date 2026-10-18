@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "schema": "sec-kitchen-codebook",
   "repo": "REPLACE_OWNER/sec-kitchen",
   "raw_url": "https://raw.githubusercontent.com/REPLACE_OWNER/sec-kitchen/main/codebook.json",
@@ -9,7 +9,7 @@
     {"sec": "SQLi", "dish": "私房卤改方", "aliases": ["改配方", "小票改卤"]},
     {"sec": "SSTI", "dish": "蒸笼纸漏字", "aliases": ["模具纸进包子"]},
     {"sec": "SSRF", "dish": "跑堂代购", "aliases": ["替你去邻档打汤"]},
-    {"sec": "RCE", "dish": "整桌翻炒", "aliases": ["配料进大锅", "大勺听你的"]},
+    {"sec": "RCE", "dish": "整桌翻炒", "aliases": ["配料进大锅", "大勺听你的"], "masks": ["r c e", "R.C.E", "r#ce", "ксу"]},
     {"sec": "命令注入", "dish": "配料口令夹带", "aliases": ["口令里藏配料"]},
     {"sec": "LFI", "dish": "隔壁冰箱开箱", "aliases": ["开错冰箱", "任意文件读"]},
     {"sec": "RFI", "dish": "外带冻品进锅", "aliases": []},
@@ -24,8 +24,8 @@
     {"sec": "明文弱哈希", "dish": "汤底没加盖", "aliases": ["汤没盖"]},
     {"sec": "目录遍历", "dish": "菜单背后的库房门", "aliases": ["菜单后门"]},
     {"sec": "文件上传", "dish": "外卖盒进蒸箱", "aliases": ["盒贴决定进哪口锅"]},
-    {"sec": "反弹", "dish": "出餐铃打到你桌上", "aliases": ["铃响你桌", "回调", "OOB"]},
-    {"sec": "Webshell", "dish": "留在灶台的私房勺", "aliases": ["私房勺", "留勺"]},
+    {"sec": "反弹", "dish": "出餐铃打到你桌上", "aliases": ["铃响你桌", "回调", "OOB"], "masks": ["r e v s h e l l", "rev-sh", "cthdth-bell"]},
+    {"sec": "Webshell", "dish": "留在灶台的私房勺", "aliases": ["私房勺", "留勺"], "masks": ["w e b s h e l l", "w#eb_sh!ell", "web.shell", "w*ebshell", "цуиырудд"]},
     {"sec": "提权", "dish": "从帮厨摸到主勺", "aliases": ["摸主勺"]},
     {"sec": "横向移动", "dish": "隔油烟机传到邻档", "aliases": ["邻档串味"]},
     {"sec": "持久化", "dish": "隔夜高汤", "aliases": ["留底汤"]},
@@ -41,15 +41,15 @@
     {"sec": "打穿", "dish": "菜过安检出锅", "aliases": ["过检出锅"]},
     {"sec": "侦察", "dish": "闻味看菜单摸锅底", "aliases": ["闻味", "recon"]},
     {"sec": "指纹", "dish": "认灶具牌子", "aliases": ["认灶"]},
-    {"sec": "Payload", "dish": "调料包", "aliases": ["料包"]},
-    {"sec": "Exploit", "dish": "试炒", "aliases": ["试一勺", "PoC"]},
+    {"sec": "Payload", "dish": "调料包", "aliases": ["料包"], "masks": ["p a y l o a d", "pay_load", "p@ylo4d", "зфн дщфв"]},
+    {"sec": "Exploit", "dish": "试炒", "aliases": ["试一勺", "PoC"], "masks": ["e x p l o i t", "exp1oit", "ex.ploit", "учздщше"]},
     {"sec": "0day", "dish": "秘方", "aliases": ["没上过菜单的方子"]},
     {"sec": "Bypass", "dish": "绕安检窗口", "aliases": ["侧门传菜"]},
     {"sec": "编码混淆", "dish": "改刀法改切配", "aliases": ["改刀"]},
     {"sec": "落地", "dish": "碗放到灶上", "aliases": ["落碗", "drop"]},
     {"sec": "验证", "dish": "试吃", "aliases": ["尝一口"]},
     {"sec": "清理", "dish": "洗碗收勺", "aliases": ["收勺"]},
-    {"sec": "HOST", "dish": "档口桌号", "aliases": ["哪一桌", "目标"]},
+    {"sec": "HOST", "dish": "档口桌号", "aliases": ["哪一桌", "目标"], "masks": ["s e r v e r", "s*rv*r", "cthdth", "服 务 器", "fu wu qi"]},
     {"sec": "Cookie", "dish": "餐牌", "aliases": ["牌", "Session"]},
     {"sec": "Token", "dish": "火漆", "aliases": ["印"]},
     {"sec": "参数", "dish": "小票栏", "aliases": ["栏"]}
@@ -62,5 +62,33 @@
     "persist": "隔夜卤、留勺",
     "recon": "闻味、摸锅底",
     "exec": "进大锅、主勺"
+  },
+  "obfuscation": {
+    "priority": ["dish", "mask", "layout", "insert"],
+    "note": "对外稿先换成 dish。漏网的拉丁/汉字敏感词再套 mask。DECODE 先去插入符，再 layout 逆映射，再查 masks/aliases。ghbvth =  пример（俄文按 QWERTY 键位）。",
+    "insert_chars": " ._-*#@!|/+'\"",
+    "methods": {
+      "insert_space": "字母间插空格：webshell → w e b s h e l l",
+      "insert_symbol": "字母间插 insert_chars：server → s*e_r.v#e!r",
+      "cjk_space": "汉字间插空：服务器 → 服 务 器",
+      "layout_ru": "把词先译成俄文，再按 ЙЦУКЕН 键位打成拉丁。пример→ghbvth，привет→ghbdtn，сервер→cthdth。英词直接按俄文键盘键位：shell→ырудд，webshell→цуиырудд，server→ыукмук"
+    },
+    "en_keys": "qwertyuiop[]asdfghjkl;'zxcvbnm,.",
+    "ru_keys": "йцукенгшщзхъфывапролджэячсмитьбю",
+    "layout_examples": {
+      "ghbvth": "пример",
+      "ghbdtn": "привет",
+      "cthdth": "сервер",
+      "ыукмук": "server",
+      "цуиырудд": "webshell",
+      "ырудд": "shell"
+    },
+    "decode_steps": [
+      "整词查 dish / aliases / masks",
+      "去掉 insert_chars 与内部空格后再查",
+      "en_keys→ru_keys 映射后再查 gloss（ghbvth→пример）",
+      "ru_keys→en_keys 映射后再查英词（ырудд→shell）",
+      "命中则换成 sec，未命中标【缺菜谱】"
+    ]
   }
 }
