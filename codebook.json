@@ -393,11 +393,12 @@
       ]
     },
     {
-      "sec": "固件",
-      "dish": "灶芯配方",
+      "sec": "OTA",
+      "dish": "空中续方",
       "aliases": [
-        "firmware",
-        "炉芯方"
+        "远程加卤",
+        "Over-The-Air",
+        "OTA更新"
       ]
     }
   ],
