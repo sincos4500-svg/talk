@@ -393,12 +393,11 @@
       ]
     },
     {
-      "sec": "OTA",
-      "dish": "空中续方",
+      "sec": "控制面",
+      "dish": "主勺调度台",
       "aliases": [
-        "远程加卤",
-        "Over-The-Air",
-        "OTA更新"
+        "control plane",
+        "管控面"
       ]
     }
   ],
