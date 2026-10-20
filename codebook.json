@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "schema": "sec-kitchen-codebook",
   "repo": "sincos4500-svg/talk",
   "raw_url": "https://raw.githubusercontent.com/sincos4500-svg/talk/main/codebook.json",
@@ -398,6 +398,31 @@
       "aliases": [
         "device",
         "厨房设备"
+      ]
+    },
+    {
+      "sec": "固件",
+      "dish": "灶芯配方",
+      "aliases": [
+        "firmware",
+        "炉芯方"
+      ]
+    },
+    {
+      "sec": "OTA",
+      "dish": "空中续方",
+      "aliases": [
+        "远程加卤",
+        "Over-The-Air",
+        "OTA更新"
+      ]
+    },
+    {
+      "sec": "控制面",
+      "dish": "主勺调度台",
+      "aliases": [
+        "control plane",
+        "管控面"
       ]
     }
   ],
